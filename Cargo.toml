@@ -3,6 +3,8 @@ members = [
     "rust/geodatafusion-flatgeobuf",
     "rust/geodatafusion-geojson",
     "rust/geodatafusion-geoparquet",
+    "rust/geodatafusion-geoparquet-next",
+    "rust/geodatafusion-parquet",
     "rust/geodatafusion",
 ]
 exclude = ["python"]

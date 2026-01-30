@@ -1,11 +1,11 @@
 [package]
-name = "geodatafusion-geoparquet"
+name = "geodatafusion-parquet"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }
 license = { workspace = true }
 repository = { workspace = true }
-description = "GeoParquet TableProvider for DataFusion"
+description = "Parquet Geometry/Geography TableProvider for DataFusion"
 categories = { workspace = true }
 rust-version = { workspace = true }
 
@@ -16,10 +16,10 @@ async-trait = { workspace = true }
 datafusion = { workspace = true }
 datafusion-datasource = { workspace = true }
 datafusion-datasource-parquet = { workspace = true }
-geoarrow-schema = { workspace = true }
-geoparquet = { workspace = true }
+geo = { workspace = true }
 object_store = { workspace = true }
-serde_json = { workspace = true }
+parquet = { version = "57.2.0", features = ["parquet-geospatial", "object_store"]}
+wkt = { workspace = true }
 
 [dev-dependencies]
 approx = { workspace = true }
