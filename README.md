@@ -2,6 +2,26 @@
 
 Spatial extensions for [Apache DataFusion](https://datafusion.apache.org/), an extensible query engine written in Rust that uses Apache Arrow as its in-memory format.
 
+## Parquet Benchmarks
+
+To reproduce benchmark results demonstrating the effectiveness of page-level geospatial statistics:
+1. Download the [test fixture](https://storage.googleapis.com/geodesic-public-data/overture.zstd.parquet) (~1.1GB) and
+   place the file at the following path: `<repo_root>/fixtures/parquet/overture.zstd.parquet`
+2. To run a benchmark using RowGroup-level pruning:
+```console
+cd rust/geodatafusion-parquet
+cargo bench
+```
+3. To run a benchmark using Page-level pruning:
+```console
+cd rust/geodatafusion-geoparquet-next
+cargo bench
+```
+
+For users looking to explore how different test fixtures and/or query bounds alter results, the source for the
+benchmarks can be found in the `benches/intersects.rs` file for each test case. Both the test fixture and the query
+bounds can be easily modified with minimal code changes.
+
 ## Install
 
 Add to your `Cargo.toml`:
